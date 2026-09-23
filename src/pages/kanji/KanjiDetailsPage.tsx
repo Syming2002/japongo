@@ -36,7 +36,7 @@ function KanjiDetailsPage() {
       <p>Kanji introuvable</p>
     ) : (
       <>
-        <h1 className="kanji-details-main-title">Détails du kanji</h1>
+        {/* <h1 className="kanji-details-main-title">Détails du kanji</h1>
         <p className="kanji-character">{kanjiCharacter}</p>
         <div className="kanji-readings-div">
           <p className="kanji-kun-readings-text">{`Lecture${kanjiFinded.kun_readings.length > 1 ? "s" : ""} purement japonaise${kanjiFinded.kun_readings.length > 1 ? "s" : ""}: ${kanjiFinded.kun_readings.map((kun_reading) => kun_reading)}`}</p>
@@ -46,7 +46,7 @@ function KanjiDetailsPage() {
           <p id="kanji-jlpt-level">{`Kanji Grade: ${kanjiFinded.grade}`}</p>
           <p id="kanji-stroke-count">{`Nombre de trait: ${kanjiFinded.stroke_count}`}</p>
           <p id="kanji-meaning">{`Signification: ${kanjiFinded.heisig_en}`}</p>
-        </div>
+        </div> */}
       </>
     );
   }
