@@ -7,19 +7,10 @@ import React, {
 
 export type KanjiDetails = {
   id: number;
-  freq_mainichi_shinbun: number | null;
-  grade: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | null;
-  heisig_en: string | null;
-  jlpt: 1 | 2 | 3 | 4 | 5 | null;
-  kanji: string;
-  kun_readings: string[];
-  meanings: string[];
-  name_readings: string[];
-  notes: string[];
-  on_readings: string[];
+  kanji_character: string;
   stroke_count: number;
   unicode: string;
-  unihan_cjk_compatibility_variant: string | undefined;
+  grade: string;
 };
 
 type KanjiContext = {

@@ -213,8 +213,9 @@
   .filter-label {
     font-size: 1.6rem;
   }
-  #search-filter {
+  #kanji-character-filter {
     text-align: center;
+    border: none;
   }
   .stroke-count-filter-div {
     display: flex;
@@ -224,6 +225,7 @@
   }
   #stroke-number-filter {
     text-align: center;
+    border: none;
   }
   .main-footer {
     display: flex;
@@ -254,19 +256,28 @@
   }
 }
 @media (width <= 768px) {
+  #kanji-jlpt-category-list-div {
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 50px;
+  }
+  .filter-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
   .filter-div {
     display: flex;
+    align-items: center;
+    flex-direction: column;
     text-decoration: none;
     box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
     background-color: #eee6d9;
     width: 250px;
     margin-top: 25px;
     padding: 25px;
-    justify-content: center;
-    justify-self: center;
     border-radius: 10px;
-    flex-direction: column;
-    align-items: center;
     gap: 25px;
   }
   .kanji-character-filter-div {
@@ -278,7 +289,7 @@
   .filter-label {
     font-size: 1.6rem;
   }
-  #search-filter {
+  #kanji-character-filter {
     text-align: center;
   }
   .stroke-count-filter-div {

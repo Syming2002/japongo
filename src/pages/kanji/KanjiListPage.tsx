@@ -11,7 +11,7 @@ import { KANJI_LEVELS } from "../../utils/kanji";
 import Filter from "../../components/Filter";
 
 type KanjiLevelParams = {
-  kanjiLevel?: "jlpt-5" | "jlpt-4" | "jlpt-3" | "jlpt-2" | "jlpt-1";
+  kanjiLevel?: "1" | "2" | "3" | "4" | "5" | "6" | "S";
 };
 
 function KanjiListPage() {
@@ -31,22 +31,12 @@ function KanjiListPage() {
         kanjiCtx.setLoading(true);
 
         const res = await fetch(
-          `https://kanjiapi.dev/v1/kanji/${currentLevel?.url}`,
+          `http://localhost:8081/kanji/grade/${currentLevel?.url}`,
         );
 
-        const kanjiCharacters: string[] = await res.json();
+        const kanji: KanjiDetails[] = await res.json();
 
-        const results: KanjiDetails[] = await Promise.all(
-          kanjiCharacters.map(async (character) => {
-            const kanjiRes = await fetch(
-              `https://kanjiapi.dev/v1/kanji/${character}`,
-            );
-
-            return kanjiRes.json();
-          }),
-        );
-
-        kanjiCtx.setKanjiArray(results);
+        kanjiCtx.setKanjiArray(kanji);
       } catch (err) {
         console.error(err);
       } finally {
@@ -74,7 +64,7 @@ function KanjiListPage() {
 
   const filterKanjiCharacter = useMemo(() => {
     return kanjiCtx.kanjiArray.filter((kanji) => {
-      const macthesCharacter = kanji.kanji.includes(search);
+      const macthesCharacter = kanji.kanji_character.includes(search);
 
       const matchesStrokeCount =
         strokeCount === 0 || kanji.stroke_count === strokeCount;
@@ -87,12 +77,14 @@ function KanjiListPage() {
     <div>
       <Header />
       <Sidebar />
-      <Filter
-        search={search}
-        setSearch={setSearch}
-        stroke_count={strokeCount}
-        setStrokeCount={setStrokeCount}
-      />
+      <div className="filter-wrapper">
+        <Filter
+          search={search}
+          setSearch={setSearch}
+          stroke_count={strokeCount}
+          setStrokeCount={setStrokeCount}
+        />
+      </div>
       <h1 id="kanji-title">Kanji du {currentLevel.title}</h1>
       {kanjiCtx.loading && (
         <h2 style={{ textAlign: "center" }}>Chargement...</h2>
@@ -101,10 +93,10 @@ function KanjiListPage() {
       <ul className="kanji-list">
         {filterKanjiCharacter.map((kanji) => (
           <KanjiCard
-            key={kanji.kanji}
-            kanji={kanji.kanji}
+            key={kanji.kanji_character}
+            kanji={kanji.kanji_character}
             onKanjiCardClick={() =>
-              handleKanjiClick(currentLevel.url, kanji.kanji)
+              handleKanjiClick(currentLevel.url, kanji.kanji_character)
             }
           />
         ))}

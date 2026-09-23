@@ -25,6 +25,7 @@
 .kanji-category-link {
   text-decoration: none;
   border-radius: 10%;
+  padding: 20px;
   box-shadow: 2px 3px 20px black, 0 0 30px #8a4d0f inset;
   background-color: #eee6d9;
 }
@@ -41,8 +42,6 @@
   width: 100px;
   height: 150px;
   display: flex;
-  justify-content: center;
-  border-radius: 5px;
 }
 
 .level-text {

@@ -43,7 +43,7 @@ function KanjiDetailsPage() {
           <p className="kanji-on-readings-text">{`Lecture${kanjiFinded.on_readings.length > 1 ? "s" : ""} sino-japonaise${kanjiFinded.on_readings.length > 1 ? "s" : ""}: ${kanjiFinded.on_readings.map((on_reading) => on_reading)}`}</p>
         </div>
         <div className="kanji-details-div">
-          <p id="kanji-jlpt-level">{`JLPT: ${kanjiFinded.jlpt}`}</p>
+          <p id="kanji-jlpt-level">{`Kanji Grade: ${kanjiFinded.grade}`}</p>
           <p id="kanji-stroke-count">{`Nombre de trait: ${kanjiFinded.stroke_count}`}</p>
           <p id="kanji-meaning">{`Signification: ${kanjiFinded.heisig_en}`}</p>
         </div>

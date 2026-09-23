@@ -23,7 +23,7 @@ function Filter({
         <input
           type="text"
           name="kanji-character-filter"
-          id="search-filter"
+          id="kanji-character-filter"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

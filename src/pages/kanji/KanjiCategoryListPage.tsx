@@ -11,14 +11,10 @@ function KanjiCategoryListPage() {
     <div className="kanji-category-list-div">
       <Header />
       <Sidebar />
-      <h1 id="kanji-category-list-main-title">Liste des Kanji par JLPT</h1>
+      <h1 id="kanji-category-list-main-title">Liste des Kanji par Niveau</h1>
       <div id="kanji-jlpt-category-list-div">
         {KANJI_LEVELS.map((level) => (
-          <KanjiCategory
-            key={level.title}
-            level={level.title}
-            path={level.url}
-          />
+          <KanjiCategory key={level.url} level={level.title} path={level.url} />
         ))}
       </div>
       <Footer
