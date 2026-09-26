@@ -1,10 +1,10 @@
 import Header from "../../components/Header";
-import GrammarSelectionCard from "../../components/GrammarSelectionCard";
 
 import "../../css/pages.css";
 import Footer from "../../components/Footer";
 import Sidebar from "../../components/Sidebar";
 import { HIRAGANA_PARTICULE } from "../../utils/kana";
+import Card from "../../components/Card";
 
 function GrammarMainPage() {
   return (
@@ -17,10 +17,11 @@ function GrammarMainPage() {
       <div className="grammar-selection-list-div-wrapper">
         <div className="grammar-selection-list-div">
           {HIRAGANA_PARTICULE.map((hiragana) => (
-            <GrammarSelectionCard
+            <Card
+              isGrammarCard={true}
               key={hiragana}
               grammarPath={`/particle/${hiragana}`}
-              grammarTheme={`La particule ${hiragana}`}
+              grammarTheme={`The particle ${hiragana}`}
             />
           ))}
         </div>

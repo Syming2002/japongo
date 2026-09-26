@@ -1,7 +1,7 @@
 import type { Kana } from "../hooks/useKana";
-import KanaCard from "./KanaCard";
 
 import "../css/cards.css";
+import Card from "./Card";
 
 interface KanaTableRowProps {
   kanaArray: Kana;
@@ -13,9 +13,19 @@ function KanaTableRow({ kanaArray, isHiragana }: KanaTableRowProps) {
     <tr className="kana-table-row">
       {kanaArray.map((kana) =>
         isHiragana ? (
-          <KanaCard key={kana.id} kana={kana.hiragana} romaji={kana.romaji} />
+          <Card
+            isKanaCard={true}
+            key={kana.id}
+            kana={kana.hiragana}
+            romaji={kana.romaji}
+          />
         ) : (
-          <KanaCard key={kana.id} kana={kana.katakana} romaji={kana.romaji} />
+          <Card
+            isKanaCard={true}
+            key={kana.id}
+            kana={kana.katakana}
+            romaji={kana.romaji}
+          />
         ),
       )}
     </tr>

@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import KanjiCard from "../../components/KanjiCard";
 
 import "../../css/pages.css";
 import Sidebar from "../../components/Sidebar";
@@ -9,6 +8,7 @@ import { useNavigate, useParams } from "react-router";
 import { useKanji, type KanjiDetails } from "../../hooks/useKanji";
 import { KANJI_LEVELS } from "../../utils/kanji";
 import Filter from "../../components/Filter";
+import Card from "../../components/Card";
 
 type KanjiLevelParams = {
   kanjiLevel?: "1" | "2" | "3" | "4" | "5" | "6" | "S";
@@ -92,8 +92,9 @@ function KanjiListPage() {
 
       <ul className="kanji-list">
         {filterKanjiCharacter.map((kanji) => (
-          <KanjiCard
+          <Card
             key={kanji.kanji_character}
+            isKanjiCard={true}
             kanji={kanji.kanji_character}
             onKanjiCardClick={() =>
               handleKanjiClick(currentLevel.url, kanji.kanji_character)
