@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import Section from "../../components/Section";
 import Sidebar from "../../components/Sidebar";
 
 import "../../css/pages.css";
@@ -20,9 +21,9 @@ function GrammarParticulePage({ hiraganaParticle }: GrammarParticulePageProps) {
           "particle-main-title " + hiraganaParticle + "particle-main-title"
         }
       >
-        {"Bienvenue sur le cours de grammaire de la particule " +
-          hiraganaParticle}
+        {"Welcome on the course of the " + hiraganaParticle + " particle "}
       </h1>
+      <Section isGrammarSection={true} particle={hiraganaParticle} />
       <Footer
         footerClassName="main-footer"
         footerHrClassName="main-hr-footer"

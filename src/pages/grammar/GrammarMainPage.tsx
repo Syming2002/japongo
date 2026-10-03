@@ -12,7 +12,7 @@ function GrammarMainPage() {
       <Header />
       <Sidebar />
       <h1 className="grammar-main-page-tooltip">
-        Cliquez sur une particule sur laquelle vous voulez approfondir
+        Click on a particle card you want to deepen
       </h1>
       <div className="grammar-selection-list-div-wrapper">
         <div className="grammar-selection-list-div">
@@ -21,7 +21,7 @@ function GrammarMainPage() {
               isGrammarCard={true}
               key={hiragana}
               grammarPath={`/particle/${hiragana}`}
-              grammarTheme={`The particle ${hiragana}`}
+              grammarTheme={`${hiragana}`}
             />
           ))}
         </div>

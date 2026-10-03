@@ -4,14 +4,51 @@
   src: url("/src/assets/fonts/yumin.ttf");
 }
 @media (width > 768px) {
-  #footer-div {
+  .main-footer {
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-self: center;
     align-items: center;
     padding: 20px;
     gap: 50px;
   }
+  #footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+  }
+  .main-hr-footer {
+    border: 1px solid #27221f;
+    justify-self: center;
+    margin-top: 50px;
+  }
+  #footer-div {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 50px;
+  }
+  #github-logo-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 20px black, 0 0 20px #8a4d0f inset;
+    background-color: #eee6d9;
+  }
+  #github-logo-div:hover {
+    transition: background-color 0.2s ease-in-out;
+    background-color: #27221f;
+  }
+  #github-logo-div:hover .github-logo {
+    color: #ffffff;
+  }
   .github-logo {
+    color: #27221f;
     font-size: 30px;
   }
   .version-paragraph {

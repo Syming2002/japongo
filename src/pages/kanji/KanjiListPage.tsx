@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
 import "../../css/pages.css";
 import Sidebar from "../../components/Sidebar";
-import { useNavigate, useParams } from "react-router";
+import { useParams, type To } from "react-router";
 import { useKanji, type KanjiDetails } from "../../hooks/useKanji";
 import { KANJI_LEVELS } from "../../utils/kanji";
 import Filter from "../../components/Filter";
@@ -20,8 +20,6 @@ function KanjiListPage() {
 
   const [search, setSearch] = useState("");
   const [strokeCount, setStrokeCount] = useState(0);
-
-  const navigate = useNavigate();
 
   const currentLevel = KANJI_LEVELS.find(({ url }) => kanjiLevel === url);
 
@@ -55,12 +53,9 @@ function KanjiListPage() {
     return <p>Level not found</p>;
   }
 
-  const handleKanjiClick = useCallback(
-    (jlptLink: string, kanji: string) => {
-      navigate(`/${jlptLink}/${kanji}`);
-    },
-    [navigate],
-  );
+  function handleKanjiClick(jlptLink: string, kanji: string): To {
+    return `/${jlptLink}/${kanji}`;
+  }
 
   const filterKanjiCharacter = useMemo(() => {
     return kanjiCtx.kanjiArray.filter((kanji) => {
@@ -96,9 +91,10 @@ function KanjiListPage() {
             key={kanji.kanji_character}
             isKanjiCard={true}
             kanji={kanji.kanji_character}
-            onKanjiCardClick={() =>
-              handleKanjiClick(currentLevel.url, kanji.kanji_character)
-            }
+            onKanjiCardClick={handleKanjiClick(
+              currentLevel.url,
+              kanji.kanji_character,
+            )}
           />
         ))}
       </ul>

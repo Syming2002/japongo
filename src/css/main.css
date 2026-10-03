@@ -3,19 +3,151 @@
   font-display: swap;
   src: url("/src/assets/fonts/yumin.ttf");
 }
-section {
+.particle-section-wrapper {
+  margin-top: 50px;
+}
+
+.card-div {
+  display: flex;
+  justify-content: center;
+}
+
+.flip-card {
+  position: relative;
+  width: 576px;
+  height: 499px;
+  display: flex;
+  justify-content: center;
+}
+
+.flip-card.flipped .flip-card-inner-div {
+  transform: rotateY(180deg);
+}
+
+.flip-card-inner-div {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.flip-card-inner-div:hover .home-card-front,
+.flip-card-inner-div:hover .home-card-back {
+  transition: background-color 0.3s ease-in-out;
   background-color: #27221f;
+}
+.flip-card-inner-div:hover section {
   color: #ffffff;
-  font-size: 30px;
+}
+.flip-card-inner-div:hover {
+  cursor: pointer;
+}
+
+.home-section {
   border-radius: 10px;
-  width: 880px;
+  box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+  background-color: #eee6d9;
+  font-size: 30px;
+  width: 40vw;
   height: -moz-fit-content;
   height: fit-content;
   display: flex;
-  justify-self: center;
   text-align: center;
   padding: 30px;
-  margin: 50px 0;
+}
+
+.home-card-front,
+.home-card-back {
+  border-radius: 10px;
+  box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+  background-color: #eee6d9;
+  font-size: 30px;
+  width: 40vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  inset: 0;
+  padding: 25px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-sizing: border-box;
+  height: 500px;
+  width: 100%;
+}
+
+.home-card-back {
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+#japan-silhouette {
+  font-size: 15rem;
+}
+
+.flip-card-inner-div:hover .card-front-section,
+.flip-card-inner-div:hover .card-back-section {
+  transition: background-color 0.3s ease-in-out;
+  background-color: #27221f;
+}
+.flip-card-inner-div:hover h2,
+.flip-card-inner-div:hover p,
+.flip-card-inner-div:hover ol,
+.flip-card-inner-div:hover div {
+  color: #ffffff;
+}
+.flip-card-inner-div:hover {
+  cursor: pointer;
+}
+
+.card-front-section,
+.card-back-section {
+  border-radius: 10px;
+  box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+  background-color: #eee6d9;
+  font-size: 30px;
+  width: 40vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.card-front-section {
+  text-align: center;
+}
+
+.second-title-section {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 32px;
+}
+
+.particle-introduction {
+  font-size: 2.6rem;
+  margin-bottom: 24px;
+}
+
+.particle-usage-list {
+  list-style-type: none;
+  font-size: 2.4rem;
+}
+
+.card-back-section {
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+ruby > rt {
+  display: ruby-text;
+  ruby-align: center;
 }
 
 @media (width <= 768px) {

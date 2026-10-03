@@ -11,7 +11,7 @@ function HomePage() {
       <div className="home-page-wrapper">
         <Header />
         <Sidebar />
-        <Section text="Bienvenue sur Japongo un site pour apprendre la langue japonaise. Sur ce site vous trouverez tout ce qu'il faut pour apprendre le japonais. Attention je ne suis en aucun cas un professeur de japonais, j'ai créé ce site pour les personnes souhaitant apprendre la langue du pays du soleil levant" />
+        <Section isHomePageSection={true} />
         <Footer
           version={0.1}
           footerClassName="main-footer"

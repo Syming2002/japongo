@@ -56,12 +56,14 @@
   text-decoration: none;
 }
 
-@mixin section {
-  background-color: $sumo_iro;
-  color: $white;
-  font-size: 30px;
+@mixin section-card {
   border-radius: 10px;
-  width: 880px;
+  box-shadow:
+    2px 3px 20px black,
+    0 0 60px #8a4d0f inset;
+  background-color: $japanese_white;
+  font-size: 30px;
+  width: calc(50vw - 10vw);
   height: fit-content;
 }
 

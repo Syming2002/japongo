@@ -24,7 +24,7 @@ function KanaTableRow({ kanaArray, isHiragana }: KanaTableRowProps) {
             isKanaCard={true}
             key={kana.id}
             kana={kana.katakana}
-            romaji={kana.romaji}
+            romaji={kana.romaji.toUpperCase()}
           />
         ),
       )}

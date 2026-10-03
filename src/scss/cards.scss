@@ -78,10 +78,12 @@
   box-shadow:
     2px 3px 20px black,
     0 0 60px #8a4d0f inset;
+  color: $sumo_iro;
   background-color: $japanese_white;
   border: none;
   transition: transform 0.5s ease;
   transform: translateY(0%);
+  text-decoration: none;
 }
 
 .kanji-card:hover {
@@ -94,8 +96,8 @@
 }
 
 .grammar-selection-card-div {
-  width: 100px;
-  height: 150px;
+  width: 125px;
+  height: 175px;
   padding: 25px;
   border-radius: 10%;
   box-shadow:
@@ -104,7 +106,6 @@
   background-color: $japanese_white;
   display: flex;
   justify-content: center;
-  border-radius: 5px;
 }
 
 .grammar-selection-card-div:hover {
@@ -117,13 +118,34 @@
   cursor: pointer;
 }
 
+.grammar-selection-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.particle-paragraph {
+  text-align: center;
+  font-size: 2.4rem;
+}
+
 .grammar-selection-card-text {
   display: flex;
-  font-size: larger;
+  font-size: 3rem;
   justify-self: center;
   align-self: center;
   text-align: center;
   color: $sumo_iro;
+}
+
+.grammar-selection-card-div:hover {
+  transition: background-color 0.2s ease-in-out;
+  background-color: $sumo_iro;
+  p {
+    color: $white;
+  }
+
+  cursor: pointer;
 }
 
 @media (width > 1440px) {
@@ -144,12 +166,6 @@
   #kana-romaji-hr {
     margin: 0 auto;
     width: 75%;
-  }
-
-  .grammar-selection-card-div {
-    p {
-      font-size: 2.1rem;
-    }
   }
 }
 

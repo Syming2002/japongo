@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router";
+import { Link, useNavigate, type To } from "react-router";
 
 import "../css/cards.css";
 import { useInView } from "react-intersection-observer";
@@ -10,7 +10,7 @@ interface CardProps {
   romaji?: string;
   isKanjiCard?: boolean;
   kanji?: string;
-  onKanjiCardClick?(): void;
+  onKanjiCardClick?: To;
   isGrammarCard?: boolean;
   grammarPath?: string;
   grammarTheme?: string;
@@ -25,7 +25,7 @@ interface KanaCardProps {
 
 interface KanjiCardProps {
   kanji?: string;
-  onKanjiCardClick?(): void;
+  onKanjiCardClick?: To;
 }
 
 interface GrammarCardProps {
@@ -90,9 +90,12 @@ function KanjiCard({ kanji, onKanjiCardClick }: KanjiCardProps) {
         "kanji-item-hidden": !inView,
       })}
     >
-      <button onClick={onKanjiCardClick} className="kanji-card">
+      <Link
+        to={onKanjiCardClick === undefined ? "" : onKanjiCardClick}
+        className="kanji-card"
+      >
         {kanji}
-      </button>
+      </Link>
     </li>
   );
 }
@@ -109,7 +112,9 @@ function GrammarCard({ grammarPath, grammarTheme }: GrammarCardProps) {
       className="grammar-selection-card-div"
       onClick={() => onGrammarCardClick(grammarPath)}
     >
-      <p className="grammar-selection-card-text">{grammarTheme}</p>
+      <div className="grammar-selection-wrapper">
+        <p className="particle-paragraph">The {grammarTheme} particle</p>
+      </div>
     </div>
   );
 }
@@ -123,10 +128,10 @@ function VerbalFormulaCard({ verbalFormula }: VerbalFormulaCardProps) {
 
   return (
     <div
-      className="grammar-selection-card-div"
+      className="verbal-formula-selection-card-div"
       onClick={() => onVerbalFormulaCardClick(verbalFormula)}
     >
-      <p className="grammar-selection-card-text">{verbalFormula}</p>
+      <p className="verbal-formula-selection-card-text">{verbalFormula}</p>
     </div>
   );
 }
