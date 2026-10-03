@@ -9,6 +9,10 @@
   flex-direction: column;
 }
 
+.home-page-secton-wrapper {
+  margin-top: 50px;
+}
+
 .kanji-category-list-div {
   height: 100%;
 }

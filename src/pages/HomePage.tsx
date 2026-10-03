@@ -11,7 +11,9 @@ function HomePage() {
       <div className="home-page-wrapper">
         <Header />
         <Sidebar />
-        <Section isHomePageSection={true} />
+        <div className="home-page-secton-wrapper">
+          <Section isHomePageSection={true} />
+        </div>
         <Footer
           version={0.1}
           footerClassName="main-footer"
