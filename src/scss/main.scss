@@ -3,6 +3,7 @@
 
 .particle-section-wrapper {
   margin-top: 50px;
+  height: 100vh;
 }
 
 .card-div {
@@ -137,23 +138,41 @@
   transform: rotateY(180deg);
 }
 
-.particle-example-ruby {
-}
-
 ruby > rt {
   display: ruby-text;
   ruby-align: center;
 }
 
 @media (width <= 768px) {
-  section {
-    width: 90%;
+  .card-div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .flip-card {
+    position: relative;
+    width: 85%;
+    height: 425px;
+  }
+
+  .home-section {
+    font-size: 2rem;
+  }
+
+  #japan-silhouette-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #japan-silhouette {
+    font-size: 5rem;
   }
 }
 
-@media (width <= 375px) {
-  section {
-    width: 85%;
-    font-size: 20px;
+@media (width <= 320px) {
+  .home-section {
+    font-size: 1.9rem;
   }
 }

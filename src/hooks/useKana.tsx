@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, type ReactNode } from "react";
 import * as kanaUtils from "../utils/kana";
 
 export type Kana = {
@@ -20,7 +20,7 @@ export const useKana = () => {
 };
 
 interface KanaProviderProps {
-  children: any;
+  children: ReactNode;
 }
 
 export function KanaProvider({ children }: KanaProviderProps) {

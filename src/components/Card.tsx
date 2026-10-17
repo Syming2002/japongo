@@ -64,15 +64,27 @@ function Card({
 
 function KanaCard({ kana, romaji }: KanaCardProps) {
   return (
-    <>
-      <td
-        className={kana === " " ? "kana-card-table-empty" : "kana-card-table"}
-      >
-        <p className={kana === " " ? "" : "kana-text"}>{kana}</p>
-        {kana !== " " && <hr id="kana-romaji-hr" />}
-        <p className={kana === " " ? "" : "romaji-text"}>{romaji}</p>
-      </td>
-    </>
+    kana !== undefined && (
+      <>
+        <td
+          className={kana === " " ? "kana-card-table-empty" : "kana-card-table"}
+        >
+          <p className={kana === " " ? "" : "kana-text"}>{kana}</p>
+          {kana !== " " && <hr id="kana-romaji-hr" />}
+          <p
+            className={
+              kana === " "
+                ? ""
+                : romaji?.length === 3
+                  ? "three-letter-romaji-text"
+                  : "romaji-text"
+            }
+          >
+            {romaji}
+          </p>
+        </td>
+      </>
+    )
   );
 }
 

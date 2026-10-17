@@ -8,6 +8,7 @@
   grid-template-columns: repeat(5, 1fr);
   justify-content: center;
   flex-wrap: wrap;
+  gap: 105px;
 }
 
 .kana-card-table {
@@ -16,9 +17,18 @@
   background-color: #eee6d9;
   border-radius: 10px;
   text-align: center;
+  font-size: 56px;
+  width: 155px;
+}
+
+.kana-card-table-empty {
+  width: 180px;
+  border-style: none;
 }
 
 #kana-romaji-hr {
+  margin: 0 auto;
+  width: 75%;
   border: 1px solid #27221f;
 }
 
@@ -47,7 +57,6 @@
 .level-text {
   display: flex;
   font-size: 2rem;
-  justify-self: center;
   align-self: center;
   text-align: center;
   color: #27221f;
@@ -121,15 +130,6 @@
   font-size: 2.4rem;
 }
 
-.grammar-selection-card-text {
-  display: flex;
-  font-size: 3rem;
-  justify-self: center;
-  align-self: center;
-  text-align: center;
-  color: #27221f;
-}
-
 .grammar-selection-card-div:hover {
   transition: background-color 0.2s ease-in-out;
   background-color: #27221f;
@@ -141,23 +141,6 @@
   cursor: pointer;
 }
 
-@media (width > 1440px) {
-  .kana-table-row {
-    gap: 100px;
-  }
-  .kana-card-table {
-    font-size: 56px;
-    width: 180px;
-  }
-  .kana-card-table-empty {
-    width: 180px;
-    border-style: none;
-  }
-  #kana-romaji-hr {
-    margin: 0 auto;
-    width: 75%;
-  }
-}
 @media (width > 1024px) and (width <= 1440px) {
   .kana-table-row {
     gap: 50px;
@@ -216,15 +199,18 @@
     border-style: none;
   }
   .kana-text {
-    font-size: 25px;
+    font-size: 4.2rem;
     text-align: center;
   }
   #kana-romaji-hr {
     margin: 0 auto;
     width: 50%;
   }
+  .three-letter-romaji-text {
+    font-size: 4.2rem;
+  }
   .romaji-text {
-    font-size: 25px;
+    font-size: 4.2rem;
     text-align: center;
   }
   .kanji-card {
@@ -276,8 +262,12 @@
     margin: 0 auto;
     width: 75%;
   }
+  .three-letter-romaji-text {
+    font-size: 2.5rem;
+    text-align: center;
+  }
   .romaji-text {
-    font-size: 25px;
+    font-size: 2.5rem;
     text-align: center;
   }
   .kanji-card {
@@ -331,8 +321,11 @@
     margin: 0 auto;
     width: 75%;
   }
+  .three-letter-romaji-text {
+    font-size: 1.6rem;
+  }
   .romaji-text {
-    font-size: 25px;
+    font-size: 2rem;
     text-align: center;
   }
   .kanji-card {
@@ -397,15 +390,18 @@
     border-style: none;
   }
   .kana-text {
-    font-size: 25px;
+    font-size: 2.5rem;
     text-align: center;
   }
   #kana-romaji-hr {
     margin: 0 auto;
     width: 75%;
   }
+  .three-letter-romaji-text {
+    font-size: 1.5rem;
+  }
   .romaji-text {
-    font-size: 25px;
+    font-size: 1.8rem;
     text-align: center;
   }
 }

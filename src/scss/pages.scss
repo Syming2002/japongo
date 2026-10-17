@@ -1,13 +1,18 @@
 @use "./variables" as *;
 
 .home-page-div {
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .home-page-secton-wrapper {
   margin-top: 50px;
+}
+
+.kana-hr-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .kanji-category-list-div {
@@ -53,7 +58,7 @@
   padding: 25px;
   display: flex;
   flex-direction: column;
-  justify-self: center;
+
   margin: 50px;
   width: fit-content;
 }
@@ -118,7 +123,7 @@
 .main-hr-footer {
   width: calc(50vw - 10vw);
   border: 1px solid $sumo_iro;
-  justify-self: center;
+
   margin-top: 50px;
 }
 
@@ -147,7 +152,7 @@
   #kana-page-hr {
     width: 880px;
     border: 1px solid $sumo_iro;
-    justify-self: center;
+
     margin-top: 50px;
   }
 
@@ -181,7 +186,7 @@
   #kana-page-hr {
     width: 50%;
     border: 1px solid $sumo_iro;
-    justify-self: center;
+
     margin-top: 50px;
   }
 
@@ -203,6 +208,13 @@
 }
 
 @media (width > 768px) {
+  .filter-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .filter-div {
     display: flex;
     text-decoration: none;
@@ -214,7 +226,6 @@
     margin-top: 25px;
     padding: 25px;
     justify-content: center;
-    justify-self: center;
     border-radius: 10px;
     flex-direction: column;
     align-items: center;
@@ -260,7 +271,7 @@
   #kanji-page-hr {
     width: 880px;
     border: 1px solid #27221f;
-    justify-self: center;
+
     margin-top: 50px;
   }
 }
@@ -336,7 +347,7 @@
   #kanji-page-hr {
     width: 880px;
     border: 1px solid #27221f;
-    justify-self: center;
+
     margin-top: 50px;
   }
 
@@ -359,7 +370,7 @@
   }
 
   .particle-grammar-page-div {
-    height: 100vh;
+    height: 100%;
   }
 }
 
@@ -382,7 +393,7 @@
   #kana-page-hr {
     width: 50%;
     border: 1px solid $sumo_iro;
-    justify-self: center;
+
     margin-top: 50px;
   }
 
@@ -412,7 +423,7 @@
   #kana-page-hr {
     width: 50%;
     border: 1px solid $sumo_iro;
-    justify-self: center;
+
     margin-top: 50px;
   }
 
@@ -455,7 +466,7 @@
   #kana-page-hr {
     width: 50%;
     border: 1px solid $sumo_iro;
-    justify-self: center;
+
     margin-top: 50px;
   }
 

@@ -11,7 +11,7 @@
     display: none;
   }
 }
-@media (width <= 768px) {
+@media (width > 425px) and (width <= 768px) {
   .sidebar {
     display: flex;
     position: fixed;
@@ -43,9 +43,39 @@
     z-index: 1;
   }
   .menu-burger-button {
+    background-color: #27221f;
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    transition: transform 0.5s ease;
+    transform: translate(0%);
     z-index: 1;
   }
   .menu-burger-button-active {
+    background-color: #27221f;
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    transition: transform 0.5s ease;
+    transform: translate(600%);
     z-index: 1;
   }
   .bar {
@@ -79,41 +109,37 @@
     transform: rotate(-45deg) translate(8px, -8px);
   }
 }
-@media (width > 425px) and (width <= 768px) {
-  .menu-burger-button {
-    background-color: #27221f;
-    display: flex;
-    position: fixed;
-    top: 20px;
-    left: 25px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border-radius: 5px;
-    width: 50px;
-    height: 50px;
-    transition: transform 0.5s ease;
-    transform: translate(0%);
-  }
-  .menu-burger-button-active {
-    background-color: #27221f;
-    display: flex;
-    position: fixed;
-    top: 20px;
-    left: 25px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border-radius: 5px;
-    width: 50px;
-    height: 50px;
-    transition: transform 0.5s ease;
-    transform: translate(600%);
-  }
-}
 @media (width > 375px) and (width <= 425px) {
+  .sidebar {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+    background-color: #eee6d9;
+    height: 100%;
+    width: 33%;
+    transition: transform 0.5s ease;
+    transform: translateX(-100%);
+    border-radius: 0 5px 5px 0;
+    z-index: 1;
+  }
+  .sidebar-active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+    background-color: #eee6d9;
+    width: 33%;
+    transition: transform 0.5s ease;
+    transform: translateX(0%);
+    border-radius: 0 5px 5px 0;
+    z-index: 1;
+  }
   .menu-burger-button {
     background-color: #27221f;
     display: flex;
@@ -127,6 +153,7 @@
     border-radius: 5px;
     width: 50px;
     height: 50px;
+    z-index: 2;
     transition: transform 0.5s ease;
     transform: translate(0%);
   }
@@ -143,11 +170,48 @@
     border-radius: 5px;
     width: 50px;
     height: 50px;
+    z-index: 2;
     transition: transform 0.5s ease;
-    transform: translate(600%);
+    transform: translate(650%);
+  }
+  .bar {
+    width: 50%;
+    background-color: #ffffff;
+    height: 2px;
+  }
+  .bar-1 {
+    transition: transform 0.5s ease;
+    transform: rotate(0deg);
+  }
+  .bar-1-active {
+    transition: transform 0.5s ease;
+    transform: rotate(45deg) translate(9px, 9px);
+  }
+  .bar-2 {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    width: 33%;
+  }
+  .bar-2-active {
+    transition: opacity 0.5s ease;
+    opacity: 0;
+  }
+  .bar-3 {
+    transition: transform 0.5s ease;
+    transform: rotate(0deg);
+  }
+  .bar-3-active {
+    transition: transform 0.5s ease;
+    transform: rotate(-45deg) translate(8px, -8px);
   }
 }
 @media (width > 320px) and (width <= 375px) {
+  .sidebar {
+    z-index: 1;
+  }
+  .sidebar-active {
+    z-index: 1;
+  }
   .menu-burger-button {
     background-color: #27221f;
     display: flex;
@@ -161,6 +225,7 @@
     border-radius: 5px;
     width: 50px;
     height: 50px;
+    z-index: 2;
     transition: transform 0.5s ease;
     transform: translate(0%);
   }
@@ -177,11 +242,48 @@
     border-radius: 5px;
     width: 50px;
     height: 50px;
+    z-index: 2;
     transition: transform 0.5s ease;
     transform: translate(550%);
   }
+  .bar {
+    width: 50%;
+    background-color: #ffffff;
+    height: 2px;
+  }
+  .bar-1 {
+    transition: transform 0.5s ease;
+    transform: rotate(0deg);
+  }
+  .bar-1-active {
+    transition: transform 0.5s ease;
+    transform: rotate(45deg) translate(9px, 9px);
+  }
+  .bar-2 {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    width: 33%;
+  }
+  .bar-2-active {
+    transition: opacity 0.5s ease;
+    opacity: 0;
+  }
+  .bar-3 {
+    transition: transform 0.5s ease;
+    transform: rotate(0deg);
+  }
+  .bar-3-active {
+    transition: transform 0.5s ease;
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
 }
 @media (width <= 320px) {
+  .sidebar {
+    z-index: 1;
+  }
+  .sidebar-active {
+    z-index: 1;
+  }
   .menu-burger-button {
     background-color: #27221f;
     display: flex;
@@ -195,6 +297,7 @@
     border-radius: 5px;
     width: 50px;
     height: 50px;
+    z-index: 2;
     transition: transform 0.5s ease;
     transform: translate(0%);
   }
@@ -211,8 +314,39 @@
     border-radius: 5px;
     width: 50px;
     height: 50px;
+    z-index: 2;
     transition: transform 0.5s ease;
     transform: translate(450%);
+  }
+  .bar {
+    width: 50%;
+    background-color: #ffffff;
+    height: 2px;
+  }
+  .bar-1 {
+    transition: transform 0.5s ease;
+    transform: rotate(0deg);
+  }
+  .bar-1-active {
+    transition: transform 0.5s ease;
+    transform: rotate(45deg) translate(9px, 9px);
+  }
+  .bar-2 {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    width: 33%;
+  }
+  .bar-2-active {
+    transition: opacity 0.5s ease;
+    opacity: 0;
+  }
+  .bar-3 {
+    transition: transform 0.5s ease;
+    transform: rotate(0deg);
+  }
+  .bar-3-active {
+    transition: transform 0.5s ease;
+    transform: rotate(-45deg) translate(8px, -8px);
   }
 }
 @media (width > 425px) and (width <= 768px) {
@@ -226,7 +360,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 120px;
+    width: calc(150% - 50px);
     height: 20px;
     padding: 35px 50px;
     border-radius: 10px;
@@ -278,10 +412,14 @@
     justify-content: center;
     gap: 15px;
   }
+  #footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .sidebar-footer-hr {
-    width: 75px;
+    width: 100px;
     border: 1px solid #27221f;
-    justify-self: center;
     margin-top: 50px;
   }
 }
@@ -296,7 +434,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 95px;
+    width: calc(100% - 25px);
     height: 40px;
     padding: 10px 30px;
     border-radius: 10px;
@@ -348,10 +486,14 @@
     justify-content: center;
     gap: 15px;
   }
+  #footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .sidebar-footer-hr {
     width: 75px;
     border: 1px solid #27221f;
-    justify-self: center;
     margin-top: 50px;
   }
 }
@@ -366,8 +508,8 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 95px;
-    height: 40px;
+    width: calc(90% - 25px);
+    height: 50px;
     padding: 10px 30px;
     border-radius: 10px;
     color: #ffffff;
@@ -409,7 +551,7 @@
     height: 674px;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 50px;
   }
   .sidebar-footer {
     display: flex;
@@ -418,10 +560,14 @@
     justify-content: center;
     gap: 15px;
   }
+  #footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .sidebar-footer-hr {
     width: 75px;
     border: 1px solid #27221f;
-    justify-self: center;
     margin-top: 50px;
   }
   .menu-burger-button {
@@ -437,6 +583,7 @@
     border-radius: 5px;
     width: 50px;
     height: 50px;
+    z-index: 2;
     transition: transform 0.5s ease;
     transform: translate(0%);
   }
@@ -453,6 +600,115 @@
     border-radius: 5px;
     width: 50px;
     height: 50px;
+    z-index: 2;
+    transition: transform 0.5s ease;
+    transform: translate(475%);
+  }
+}
+@media (width <= 320px) {
+  .sidebar-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar-link {
+    background-color: #27221f;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: calc(90% - 25px);
+    height: 50px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .sidebar {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+    background-color: #eee6d9;
+    height: 100vh;
+    width: 33%;
+    transition: transform 0.5s ease;
+    transform: translateX(-100%);
+    border-radius: 0 5px 5px 0;
+  }
+  .sidebar-active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+    background-color: #eee6d9;
+    width: 33%;
+    transition: transform 0.5s ease;
+    transform: translateX(0%);
+    border-radius: 0 5px 5px 0;
+  }
+  .link-div {
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+    height: 674px;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+  }
+  .sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  #footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar-footer-hr {
+    width: 75px;
+    border: 1px solid #27221f;
+    margin-top: 50px;
+  }
+  .menu-burger-button {
+    background-color: #27221f;
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    transition: transform 0.5s ease;
+    transform: translate(0%);
+  }
+  .menu-burger-button-active {
+    background-color: #27221f;
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
     transition: transform 0.5s ease;
     transform: translate(475%);
   }

@@ -19,7 +19,9 @@ function KanaPage() {
           <KanaTableRow kanaArray={kana} isHiragana={true} />
         </tbody>
       </table>
-      <hr id="kana-page-hr" />
+      <div className="kana-hr-wrapper">
+        <hr id="kana-page-hr" />
+      </div>
       <h1 id="katakana-title">Tableau des Katakana</h1>
       <table className="kana-table">
         <tbody>
